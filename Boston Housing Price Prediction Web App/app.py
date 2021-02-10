@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import shap
+#import shap
 import matplotlib.pyplot as plt
 from sklearn import datasets
 from sklearn.ensemble import RandomForestRegressor
@@ -21,7 +21,6 @@ Y = pd.DataFrame(boston.target, columns=["MEDV"])
 st.sidebar.header('Specify Input Parameters')
 
 def user_input_features():
-
     CRIM = st.sidebar.slider('CRIM', X.CRIM.min(), X.CRIM.max(), X.CRIM.mean())
     ZN = st.sidebar.slider('ZN', X.ZN.min(), X.ZN.max(), X.ZN.mean())
     INDUS = st.sidebar.slider('INDUS', X.INDUS.min(), X.INDUS.max(), X.INDUS.mean())

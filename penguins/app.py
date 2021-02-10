@@ -14,7 +14,7 @@ st.sidebar.markdown("""
 """)
 
 uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
-if uploaded_file in not None:
+if uploaded_file is not None:
     input_df = pd.read_csv(uploaded_file)
 else:
     def user_input_features():
@@ -31,7 +31,7 @@ else:
                     'body_mass_g' : body_mass_g,
                     'sex' : sex }
 
-            features = pd.DataFrame(data, index==[0])
+            features = pd.DataFrame(data, index = [0])
             return features
     input_df = user_input_features() 
 
